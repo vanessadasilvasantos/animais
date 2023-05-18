@@ -1,4 +1,4 @@
-import initTabNav from "./module/tab-nav.js";
+import TabNav from "./module/tab-nav.js";
 import ScrollSuave from "./module/scroll-suave.js";
 import Acordion from "./module/acordion.js";
 import activeAnimaScroll from "./module/anima-scroll.js";
@@ -15,8 +15,13 @@ scollSuave.init();
 const acordion = new Acordion("[data-js='acordion'] dt");
 acordion.init();
 
+const tabNav = new TabNav(
+  "[data-tab='menu'] li",
+  "[data-tab='content'] section"
+);
+tabNav.init();
+
 activeAnimaScroll();
-initTabNav();
 initModal();
 initDropdow();
 initMenuMobile();
