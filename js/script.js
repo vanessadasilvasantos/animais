@@ -1,6 +1,6 @@
 import initTabNav from "./module/tab-nav.js";
 import ScrollSuave from "./module/scroll-suave.js";
-import activeAcordion from "./module/acordion.js";
+import Acordion from "./module/acordion.js";
 import activeAnimaScroll from "./module/anima-scroll.js";
 import initModal from "./module/modal-abrir.js";
 import initDropdow from "./module/dropdow.js";
@@ -12,8 +12,10 @@ import initBitcoinValor from "./module/btn.js";
 const scollSuave = new ScrollSuave('a[href^="#"]');
 scollSuave.init();
 
+const acordion = new Acordion("[data-js='acordion'] dt");
+acordion.init();
+
 activeAnimaScroll();
-activeAcordion();
 initTabNav();
 initModal();
 initDropdow();
