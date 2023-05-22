@@ -1,4 +1,4 @@
-import initNumero from "./numero.js";
+import Numero from "./numero.js";
 
 export default function initFethAnimal() {
   async function fethAnimais(url) {
@@ -10,7 +10,8 @@ export default function initFethAnimal() {
         const divAnimal = creatAnimal(animal);
         numeroAnimais.appendChild(divAnimal);
       });
-      initNumero();
+      const numero = new Numero("[data-numero]", ".numero", "ativo");
+      numero.init();
     } catch (erro) {
       console.log(erro);
     }
