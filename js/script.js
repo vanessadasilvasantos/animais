@@ -32,6 +32,7 @@ activeAnimaScroll();
 initDropdow();
 initMenuMobile();
 initFuncionamento();
-initBitcoinValor();
+
+initBitcoinValor("https://blockchain.info/ticker", ".btn-num");
 
 initFethAnimal("./animais.json", ".numero-grid");

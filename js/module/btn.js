@@ -1,8 +1,8 @@
-export default function initBitcoinValor() {
-  fetch("https://blockchain.info/ticker")
+export default function initBitcoinValor(url, target) {
+  fetch(url)
     .then((r) => r.json())
     .then((bitcoin) => {
-      const btnPreco = document.querySelector(".btn-num");
+      const btnPreco = document.querySelector(target);
       btnPreco.innerText = (1000 / bitcoin.BRL.sell).toFixed(4);
     })
     .catch((erro) => {
