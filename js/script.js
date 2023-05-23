@@ -32,5 +32,6 @@ activeAnimaScroll();
 initDropdow();
 initMenuMobile();
 initFuncionamento();
-initFethAnimal();
 initBitcoinValor();
+
+initFethAnimal("./animais.json", ".numero-grid");
