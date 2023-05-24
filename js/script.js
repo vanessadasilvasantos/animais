@@ -4,7 +4,7 @@ import Acordion from "./module/acordion.js";
 import AnimaScroll from "./module/anima-scroll.js";
 import Modal from "./module/modal-abrir.js";
 import Dropdow from "./module/dropdow.js";
-import initMenuMobile from "./module/menu-mobile.js";
+import MenuMobile from "./module/menu-mobile.js";
 import initFuncionamento from "./module/funcionamento.js";
 import initFethAnimal from "./module/feth-animais.js";
 import initBitcoinValor from "./module/btn.js";
@@ -34,7 +34,9 @@ animaScroll.init();
 const dropdowMenu = new Dropdow("[data-dropdow]", ["touchstart", "click"]);
 dropdowMenu.init();
 
-initMenuMobile();
+const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
+menuMobile.init();
+
 initFuncionamento();
 
 initBitcoinValor("https://blockchain.info/ticker", ".btn-num");
