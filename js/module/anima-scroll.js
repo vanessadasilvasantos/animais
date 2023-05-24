@@ -1,9 +1,11 @@
+import debouce from "./debouce.js";
+
 export default class AnimaScroll {
   constructor(target) {
     this.sections = document.querySelectorAll(target);
     this.windowMetade = window.innerHeight * 0.6;
 
-    this.animaScroll = this.animaScroll.bind(this);
+    this.animaScroll = debouce(this.animaScroll.bind(this), 50);
   }
 
   getDistance() {
@@ -17,6 +19,7 @@ export default class AnimaScroll {
   }
 
   checkDistance() {
+    console.log("teste");
     this.distance.forEach((item) => {
       if (window.pageXOffset > item.offset) {
         item.element.classList.add("ativo");
