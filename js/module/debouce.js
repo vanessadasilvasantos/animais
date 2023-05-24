@@ -1,9 +1,9 @@
-export default function debouce(claback, delay) {
+export default function debouce(callback, delay) {
   let timer;
   return (...args) => {
     if (timer) clearTimeout(timer);
-    timer = setInterval(() => {
-      claback(...args);
+    timer = setTimeout(() => {
+      callback(...args);
       timer = null;
     }, delay);
   };
