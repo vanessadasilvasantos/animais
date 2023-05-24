@@ -1,19 +1,39 @@
 import outsideClick from "./outsideClick.js";
 
-export default function initDropdow() {}
+export default class Dropdow {
+  constructor(dropdowMenu, events) {
+    if (events === undefined) {
+      this.events = ["touchstart", "click"];
+    } else {
+      this.events = events;
+    }
 
-const dropdowMenu = document.querySelectorAll("[data-dropdow]");
+    this.dropdowMenu = document.querySelectorAll(dropdowMenu);
+    this.activeClass = "activ";
 
-dropdowMenu.forEach((event) => {
-  ["touchstart", "click"].forEach((eventUser) => {
-    event.addEventListener(eventUser, handleClick);
-  });
-});
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-function handleClick(event) {
-  event.preventDefault();
-  this.classList.add("activ");
-  outsideClick(this, ["touchstart", "click"], () => {
-    this.classList.remove("activ");
-  });
+  handleClick(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    element.classList.add(this.activeClass);
+    outsideClick(element, this.events, () => {
+      element.classList.remove(this.activeClass);
+    });
+  }
+
+  addDropdowMenu() {
+    this.dropdowMenu.forEach((event) => {
+      this.events.forEach((eventUser) => {
+        event.addEventListener(eventUser, this.handleClick);
+      });
+    });
+  }
+
+  init() {
+    if (this.dropdowMenu.legth) {
+      this.addDropdowMenu();
+    }
+  }
 }

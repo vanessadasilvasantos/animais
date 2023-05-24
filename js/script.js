@@ -3,7 +3,7 @@ import ScrollSuave from "./module/scroll-suave.js";
 import Acordion from "./module/acordion.js";
 import AnimaScroll from "./module/anima-scroll.js";
 import Modal from "./module/modal-abrir.js";
-import initDropdow from "./module/dropdow.js";
+import Dropdow from "./module/dropdow.js";
 import initMenuMobile from "./module/menu-mobile.js";
 import initFuncionamento from "./module/funcionamento.js";
 import initFethAnimal from "./module/feth-animais.js";
@@ -31,7 +31,9 @@ modal.init();
 const animaScroll = new AnimaScroll("[data-js='scroll'");
 animaScroll.init();
 
-initDropdow();
+const dropdowMenu = new Dropdow("[data-dropdow]", ["touchstart", "click"]);
+dropdowMenu.init();
+
 initMenuMobile();
 initFuncionamento();
 
