@@ -1,7 +1,7 @@
 import TabNav from "./module/tab-nav.js";
 import ScrollSuave from "./module/scroll-suave.js";
 import Acordion from "./module/acordion.js";
-import activeAnimaScroll from "./module/anima-scroll.js";
+import AnimaScroll from "./module/anima-scroll.js";
 import Modal from "./module/modal-abrir.js";
 import initDropdow from "./module/dropdow.js";
 import initMenuMobile from "./module/menu-mobile.js";
@@ -28,7 +28,9 @@ const modal = new Modal(
 );
 modal.init();
 
-activeAnimaScroll();
+const animaScroll = new AnimaScroll("[data-js='scroll'");
+animaScroll.init();
+
 initDropdow();
 initMenuMobile();
 initFuncionamento();
