@@ -5,7 +5,7 @@ import AnimaScroll from "./module/anima-scroll.js";
 import Modal from "./module/modal-abrir.js";
 import Dropdow from "./module/dropdow.js";
 import MenuMobile from "./module/menu-mobile.js";
-import initFuncionamento from "./module/funcionamento.js";
+import Funcionamento from "./module/funcionamento.js";
 import initFethAnimal from "./module/feth-animais.js";
 import initBitcoinValor from "./module/btn.js";
 
@@ -37,7 +37,8 @@ dropdowMenu.init();
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init();
 
-initFuncionamento();
+const funcionamento = new Funcionamento("[data-semana]", "aberto", "fechado");
+funcionamento.init();
 
 initBitcoinValor("https://blockchain.info/ticker", ".btn-num");
 
