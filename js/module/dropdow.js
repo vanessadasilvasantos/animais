@@ -35,5 +35,6 @@ export default class Dropdow {
     if (this.dropdowMenu.legth) {
       this.addDropdowMenu();
     }
+    return this;
   }
 }

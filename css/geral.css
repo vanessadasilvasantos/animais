@@ -279,13 +279,19 @@ body {
 }
 
 .js [data-js="acordion"] dt::after {
-  content: "⤵";
-  margin-left: 10px;
+  content: "";
+  display: inline-block;
+  margin-left: 5px;
+  background: url("../img/arrow-red.svg") no-repeat center center;
+  width: 7px;
+  height: 8px;
+  transform: rotate(90deg);
+  transition: 0.3s;
 }
 
 .js [data-js="acordion"] dt.ativo::after {
-  content: "⤴";
-  margin-left: 10px;
+  content: "";
+  transform: rotate(-90deg);
 }
 
 .js [data-js="acordion"] dt {
@@ -368,4 +374,21 @@ body {
   background-color: chartreuse;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
+}
+
+.arrow-black {
+  display: inline-block;
+  background: url("../img/arrow-black.svg") no-repeat center center;
+  width: 7px;
+  height: 8px;
+}
+
+@media (max-width: 700px) {
+  .titulo {
+    font-size: 3rem;
+  }
+
+  .numero-grid h3 {
+    font-size: 1.5rem;
+  }
 }

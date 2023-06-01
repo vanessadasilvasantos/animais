@@ -32,7 +32,7 @@ modal.init();
 const animaScroll = new AnimaScroll("[data-js='scroll'");
 animaScroll.init();
 
-const dropdowMenu = new Dropdow("[data-dropdow]", ["touchstart", "click"]);
+const dropdowMenu = new Dropdow("[data-dropdow]");
 dropdowMenu.init();
 
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
@@ -49,5 +49,3 @@ const slide = new SlideNav(".slide", ".wrapper");
 slide.Init();
 
 slide.addControl(".custom-controls");
-
-slide.addArrow(".prev", ".next");

@@ -164,17 +164,6 @@ export class SlideNav extends Slide {
     this.bindControlEvent();
   }
 
-  addArrow(prev, next) {
-    this.prevElement = document.querySelector(prev);
-    this.nextElement = document.querySelector(next);
-    this.addEventArrow();
-  }
-
-  addEventArrow() {
-    this.prevElement.addEventListener("click", this.activePrevSlide);
-    this.nextElement.addEventListener("click", this.activeNextSlide);
-  }
-
   creatControl() {
     const control = document.createElement("ul");
     control.dataset.control = "slide";
